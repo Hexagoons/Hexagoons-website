@@ -1,0 +1,81 @@
+// Imports fonts that you will used in the application or in the template
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+// Import all your dependencies
+@import "lib/_bootstrap";
+
+// Import the base template
+@import "lib/_template";
+
+.special-font, .navbar-brand {
+    font-family: $font-family-special;
+}
+
+h2, .h2 {
+    letter-spacing: 6px;
+}
+
+@media screen and (min-width: 1100px){
+    h1 {
+        line-height: 100px;
+    }
+}
+
+.hexagoons {
+    font-size: 85px;
+}
+.subheader {
+    display: block;
+}
+.subheader-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 600px){
+    h1 {
+        font-size: 40px;
+    }
+    .hexagoons {
+        font-size: 40px;
+    }
+    .subheader-mobile {
+        padding-top: 0;
+        display: block;
+    }
+    .subheader {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1100px){
+    .subheader {
+        margin: 0 200px;
+    }
+}
+
+@media screen and (max-width: 991px){
+    .carousel-control {
+        top: 18px;
+    }
+}
+
+@media screen and (max-width: 595px){
+    .carousel-control {
+        right: 2rem;
+    }
+    .carousel-control.right {
+        right: 2rem;
+    }
+}
+
+
+.section-container {
+    padding-top: 0;
+}
+
+.carousel-caption .btn {
+    margin-top: 10px;
+}
+
