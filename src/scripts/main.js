@@ -11,7 +11,7 @@ function navbarFixedTopAnimation() {
   
   $(document).scroll(function() { 
     scroll_pos = $(this).scrollTop();
-    if(scroll_pos > 440) {
+    if(scroll_pos > 700) {
       $(".navbar-default").addClass('active');
     } else {
       if ($(".navbar-default").hasClass('home') && $(".navbar-collapse").hasClass('in')) return;
@@ -22,7 +22,7 @@ function navbarFixedTopAnimation() {
   $('.navbar-toggle').click(function(event){
     if (!$('.navbar-default').hasClass('active')) {
       $(".navbar-default").addClass('active home');
-    }else if($(".navbar-default").hasClass('home') && scroll_pos <440){
+    }else if($(".navbar-default").hasClass('home') && scroll_pos < 700){
       $(".navbar-default").removeClass('active');
     }
   });
@@ -52,3 +52,11 @@ function navActivePage(){
   $('nav li a[href=".' + location.pathname + '"]').addClass('active');
   if (location.pathname == '/') $('nav li a[href="./index.html"]').addClass('active')
 }
+
+$(document).on('click', 'a[href^="#"]', function (event) {
+	event.preventDefault();
+
+	$('html, body').animate({
+		scrollTop: $($.attr(this, 'href')).offset().top - 100
+	}, 500);
+});
